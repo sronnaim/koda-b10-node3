@@ -16,11 +16,11 @@ export async function start(attempt = 5, min = 1, max = 100) {
 
     switch (res) {
       case "less":
-        console.log("Incorrect! The number is more than ", guess);
+        console.log("Incorrect! The number is more than ", guess, ".");
         continue;
 
       case "more":
-        console.log("Incorrect! The number is less than ", guess);
+        console.log("Incorrect! The number is less than ", guess, ".");
         continue;
     }
 
@@ -51,10 +51,10 @@ async function askGuess(min, max) {
     try {
       const num = validateNumber(answer);
 
-      if (num < min) return `Your guess cannot be less than ${min}`;
-      if (num > max) return `Your guess cannot be more than ${max}`;
+      if (num < min) return `Your guess cannot be less than ${min}.`;
+      if (num > max) return `Your guess cannot be more than ${max}.`;
     } catch {
-      return `${answer} is not a valid guess, please enter only a valid number between ${min} and ${max}`;
+      return `${answer} is not a valid guess, please enter only a valid number between ${min} and ${max}.`;
     }
   });
 }
